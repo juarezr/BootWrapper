@@ -1,0 +1,4 @@
+﻿
+
+1. Injetar Log
+2. Injetar verificador de perfis do SiteMap.

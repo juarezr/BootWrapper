@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6FAABC1-289A-49B6-BB00-7D721F3EB6E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BootWrapper.BW</RootNamespace>
+    <AssemblyName>BootWrapper.BW</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;debug</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\BootWrapper.FW</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\ProjectTester\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\..\..\ProjectTester\packages\itextsharp.xmlworker.5.5.6\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Bootstrap\DatePickerFormat.cs" />
+    <Compile Include="Controls\Bootstrap\DatePickerFormatAttribute.cs" />
+    <Compile Include="Controls\UI\MvcSketchButton.cs" />
+    <Compile Include="Controls\UI\MvcLinkButton.cs" />
+    <Compile Include="Controls\UI\MvTextBox.cs" />
+    <Compile Include="Controls\UI\MvcInput.cs" />
+    <Compile Include="Controls\UI\MvcButton.cs" />
+    <Compile Include="Controls\UI\MvcGrid.cs" />
+    <Compile Include="Controls\Bootstrap\BootstrapValueAttribute.cs" />
+    <Compile Include="Controls\Bootstrap\ButtonAction.cs" />
+    <Compile Include="Controls\UI\MvcCheckbox.cs" />
+    <Compile Include="Controls\UI\MvcTag.cs" />
+    <Compile Include="Controls\UI\MvcIcon.cs" />
+    <Compile Include="Controls\UI\MvcModal.cs" />
+    <Compile Include="Controls\Bootstrap\PanelColor.cs" />
+    <Compile Include="Controls\Bootstrap\InputTextSize.cs" />
+    <Compile Include="Controls\Bootstrap\ButtonSize.cs" />
+    <Compile Include="Controls\Bootstrap\ButtonColor.cs" />
+    <Compile Include="Controls\UI\MvcBaseComponent.cs" />
+    <Compile Include="Controls\UI\MvcTabContent.cs" />
+    <Compile Include="Controls\UI\MvcTabPanel.cs" />
+    <Compile Include="Controls\UI\MvcPanelGroup.cs" />
+    <Compile Include="Controls\UI\MvcPanel.cs" />
+    <Compile Include="Controls\UI\MvcDiv.cs" />
+    <Compile Include="Controls\Settings\ControlSettings.cs" />
+    <Compile Include="Controls\Util\AttributesHelper.cs" />
+    <Compile Include="Controls\Util\DropDownListUtil.cs" />
+    <Compile Include="Controls\WebControls.cs" />
+    <Compile Include="Core\ApplicationSession.cs" />
+    <Compile Include="Core\BWConfigurationSection.cs" />
+    <Compile Include="Core\LinqExtensions.cs" />
+    <Compile Include="Core\MethodHelpers.cs" />
+    <Compile Include="Exceptions\BWException.cs" />
+    <Compile Include="Interfaces\ILoginContext.cs" />
+    <Compile Include="Interfaces\ILogProvider.cs" />
+    <Compile Include="Menu\CustomRoleProvider.cs" />
+    <Compile Include="Interfaces\ILoginUser.cs" />
+    <Compile Include="Core\ModelController.cs" />
+    <Compile Include="Core\MvcHtmlExtentions.cs" />
+    <Compile Include="Core\MvcRazorHelpers.cs" />
+    <Compile Include="Interfaces\IRoleProvider.cs" />
+    <Compile Include="Menu\MvcSiteMapHelpers.cs" />
+    <Compile Include="Menu\MvcSiteMapProvider.cs" />
+    <Compile Include="Core\Report\BasePDFReport.cs" />
+    <Compile Include="Core\Shared\AppInfo.cs" />
+    <Compile Include="Core\Shared\DateTimeExtensions.cs" />
+    <Compile Include="Core\Translator\Translator.cs" />
+    <Compile Include="Core\ViewResultExtension.cs" />
+    <Compile Include="Formatter\FormatUtil.cs" />
+    <Compile Include="Formatter\MoneyUtil.cs" />
+    <Compile Include="Formatter\NumberUtils.cs" />
+    <Compile Include="Formatter\StringUtils.cs" />
+    <Compile Include="Model\FWModelError.cs" />
+    <Compile Include="Model\FWModelLogin.cs" />
+    <Compile Include="Model\FWBaseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Permissions.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\EditViewModel.cs" />
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\GridViewModel.cs" />
+    <Compile Include="ViewModels\FindViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
