@@ -1,0 +1,13 @@
+/* DatePicker */
+
+.datepicker table tr td.active, 
+.datepicker table tr td.active:hover
+{
+    color: #ffffff;
+    background-color: #B053AA !important;
+    border-color: #B053AA !important;
+}
+
+.datepicker.dropdown-menu {
+    background-color: #fff !important;
+}
