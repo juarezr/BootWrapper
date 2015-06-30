@@ -42,14 +42,16 @@ namespace BootWrapper.BW.Controls
         {   
             var tag = base.CreateTag(htmlAttributes);
             tag.Attributes.Add("value", "true");
-            tag.InnerHtml = Text;
-
+            
             if (IsChecked)
                 tag.Attributes.Add("checked", "checked");
-            
+
+            var spanBuilder = new TagBuilder("span");
+            spanBuilder.InnerHtml = Text;
+
             var divBuilder = new TagBuilder("div");
             divBuilder.AddCssClass("input-group");
-            divBuilder.InnerHtml = tag.ToString(TagRenderMode.SelfClosing);
+            divBuilder.InnerHtml = tag.ToString(TagRenderMode.SelfClosing) + spanBuilder.ToString(TagRenderMode.Normal);
 
             return divBuilder;
         }

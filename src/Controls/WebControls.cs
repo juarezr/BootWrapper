@@ -40,7 +40,7 @@ namespace BootWrapper.BW.Controls
         public static string BWPropertyName<TModel, TProperty>(Expression<Func<TModel, TProperty>> expression)
         {
             return AttributesHelper.GetPropertyName(expression);
-            }
+        }
 
         public static RouteValueDictionary MergeAndOverrideAttributes(object baseAttributes, object htmlAttributes)
         {
@@ -86,7 +86,16 @@ namespace BootWrapper.BW.Controls
 
         public static TAttribute BWGetAttribute<TIn, TOut, TAttribute>(this Expression<Func<TIn, TOut>> expression) where TAttribute : Attribute
         {
-            var memberExpression = expression.Body as MemberExpression;
+            MemberExpression memberExpression = null;
+            if (expression.Body.NodeType == ExpressionType.Convert)
+            {
+                memberExpression = ((UnaryExpression)expression.Body).Operand as MemberExpression;      
+            }
+            else
+                memberExpression = expression.Body as MemberExpression;      
+
+            if (memberExpression == null)
+                return null;
             var attributes = memberExpression.Member.GetCustomAttributes(typeof(TAttribute), true);
             return attributes.Length > 0 ? attributes[0] as TAttribute : null;
         }
@@ -676,7 +685,7 @@ namespace BootWrapper.BW.Controls
         public static MvcHtmlString BWButton(this HtmlHelper htmlHelper, ButtonSize size, ButtonAction actionStyle, ButtonColor color, string id, string text, bool translate = false, object htmlAttributes = null)
         {
             var translated = translate ? htmlHelper.BWGetLocalString(id, text) : text;
-            var tag = new MvcButton(htmlHelper.ViewContext).Set(size).Set(actionStyle).Set(color).SetText(translated);
+            var tag = new MvcButton(htmlHelper.ViewContext).SetId(id).Set(size).Set(actionStyle).Set(color).SetText(translated);
 
             return tag.ToHtml(htmlAttributes);
         }

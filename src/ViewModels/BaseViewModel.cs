@@ -8,7 +8,7 @@ namespace BootWrapper.BW.ViewModels
 {
     public delegate void LogoutEventHandler(object sender, EventArgs e);
 
-    public class BaseViewModel : IDisposable
+    public partial class BaseViewModel : IDisposable
     {
         //public static event LogoutEventHandler RedirectOut;
         public List<String> Messages { get; set; }

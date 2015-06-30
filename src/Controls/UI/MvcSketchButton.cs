@@ -31,7 +31,7 @@ namespace BootWrapper.BW.Controls
 
         public MvcSketchButton(ViewContext viewContext)
             : this(viewContext, DEFAULT_BUTTON_TAG)
-        {           
+        {            
         }
 
         public MvcSketchButton(ViewContext viewContext, string tag)
@@ -40,7 +40,8 @@ namespace BootWrapper.BW.Controls
             Set(ButtonColor.Custom);
             Set(ButtonSize.Small);
 
-            this._tagType = tag;
+            Enable(true);
+            SetTagType(tag);            
         }
 
         public T Set(ButtonColor color)

@@ -12,9 +12,9 @@ namespace BootWrapper.BW.ViewModels
             public string Name { get; set; }
         }
 
-        public EditViewModel() 
+        public EditViewModel()
         {
             Entity = Activator.CreateInstance<TEntityType>();
-        }
+        }      
     }
 }

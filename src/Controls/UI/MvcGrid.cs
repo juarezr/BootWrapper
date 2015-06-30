@@ -6,6 +6,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using iTextSharp.tool.xml.html;
+using BootWrapper.BW.Controls.Util;
 
 namespace BootWrapper.BW.Controls
 {
@@ -104,10 +105,11 @@ namespace BootWrapper.BW.Controls
         /// <param name="fieldName">Nome da coluna</param>
         /// <param name="baseAttributes">Atributos da coluna</param>
         /// <returns>O próprio objeto</returns>
-        protected MvcGrid<TModel> RenderColumn(string fieldName, object baseAttributes)
+        protected MvcGrid<TModel> RenderColumn(string fieldName, object baseAttributes = null)
         {
             TagBuilder tag = new TagBuilder("th");
             tag.MergeAttribute("data-field", fieldName);
+            tag.MergeAttribute("data-header", _title);
 
             var atributes = WebControls.MergeAndOverrideAttributes(baseAttributes, _htmlAttributes);
             tag.MergeAttributes(atributes, true);
@@ -128,11 +130,7 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Column(string fieldName)
         {
-            var baseAttributes = new
-            {
-                data_field = fieldName
-            };
-            return RenderColumn(fieldName, baseAttributes);
+            return RenderColumn(fieldName);
         }
 
         /// <summary>
@@ -142,7 +140,9 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Column(Expression<Func<TModel, object>> expression)
         {
-            string fieldName = WebControls.BWPropertyName(expression);
+            Set(AttributesHelper.DiscoverDisplay(expression));
+            string fieldName = AttributesHelper.GetPropertyName(expression);
+
             return Column(fieldName);
         }
 
@@ -166,7 +166,8 @@ namespace BootWrapper.BW.Controls
         /// <param name="expression">Expressão lambda do model</param>
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> DateColumn(Expression<Func<TModel, object>> expression)
-        {
+        {            
+            Set(AttributesHelper.DiscoverDisplay(expression));
             string fieldName = WebControls.BWPropertyName(expression);
             return DateColumn(fieldName);
         }
@@ -192,6 +193,7 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Checkbox(Expression<Func<TModel, object>> expression)
         {
+            Set(AttributesHelper.DiscoverDisplay(expression));
             string fieldName = WebControls.BWPropertyName(expression);
             return Checkbox(fieldName);
         }
@@ -205,8 +207,7 @@ namespace BootWrapper.BW.Controls
         public MvcGrid<TModel> Link(string fieldName, string linkURL)
         {
             var baseAttributes = new
-            {
-                data_field = fieldName,
+            {                
                 data_action_link = linkURL
             };
             return RenderColumn(fieldName, baseAttributes);
@@ -220,6 +221,7 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Link(Expression<Func<TModel, object>> expression, string linkURL)
         {
+            Set(AttributesHelper.DiscoverDisplay(expression));
             string fieldName = WebControls.BWPropertyName(expression);
             return Link(fieldName, linkURL);
         }

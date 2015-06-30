@@ -20,10 +20,15 @@ namespace BootWrapper.BW.ViewModels
             this.Entity = Model;
         }
 
+        public LoginViewModel LogIn()
+        {
+            return LogIn(this.Entity);
+        }
+
         public LoginViewModel LogIn(BWModelLogin Model)
         {
             try
-            {
+            {                
                 this.logado = false;
 
                 ILoginUser user = Permissions.Instance.Auth(Model.Login, Model.Password);

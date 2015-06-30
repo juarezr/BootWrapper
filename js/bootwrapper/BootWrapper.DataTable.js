@@ -230,7 +230,8 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
         var ths = $('#' + tableId + ' th');
         $.each(ths, function (i, field) {
             var datafield = $(field).attr("data-field");
-            var col = { "mData": datafield, "sName": datafield };
+			var headerTitle = $(field).attr("data-header") || '';
+            var col = { "mData": datafield, "sName": headerTitle };
             var displayFormat = $(field).attr("data-display-format");
             if (displayFormat) {
                 col.mDisplay = displayFormat;

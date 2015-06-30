@@ -233,7 +233,8 @@ namespace BootWrapper.BW.Controls
                 tag.GenerateId(id);
 
             tag.MergeAttributes(AttributesHelper.UnwrapRouteValueDictionary(htmlAttributes));
-            tag.MergeAttributes(MergeClassAttributes(cssClass, htmlAttributes), false);
+            if (!String.IsNullOrEmpty(cssClass))
+                tag.MergeAttributes(MergeClassAttributes(cssClass, htmlAttributes), false);
 
             return tag;
         }
