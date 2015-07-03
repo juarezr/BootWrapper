@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using iTextSharp.tool.xml.html;
 using BootWrapper.BW.Controls.Util;
+using System.Web.Routing;
 
 namespace BootWrapper.BW.Controls
 {
@@ -206,10 +207,11 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Link(string fieldName, string linkURL)
         {
-            var baseAttributes = new
-            {                
-                data_action_link = linkURL
-            };
+            var baseAttributes = new 
+            {
+                data_action_link= linkURL
+            }            
+
             return RenderColumn(fieldName, baseAttributes);
         }
 
@@ -225,7 +227,28 @@ namespace BootWrapper.BW.Controls
             string fieldName = WebControls.BWPropertyName(expression);
             return Link(fieldName, linkURL);
         }
+        
 
+        /// <summary>
+        /// Cria uma coluna com link qualquer
+        /// </summary>
+        /// <param name="expression">Expressão lambda do model</param>
+        /// <param name="linkURL">Texto Url da coluna</param>
+        /// <returns>O próprio objeto</returns>
+        public MvcGrid<TModel> TemplateColumn(Expression<Func<TModel, object>> expression, string jsFunction)
+        {
+            Set(AttributesHelper.DiscoverDisplay(expression));
+            string fieldName = WebControls.BWPropertyName(expression);
+
+            var baseAttributes = new
+            {                
+                data_template=jsFunction
+            };
+
+            return RenderColumn(fieldName, baseAttributes);
+        }
+
+       
         /// <summary>
         /// Cria uma coluna com link de acordo com os parametros informados.
         /// </summary>

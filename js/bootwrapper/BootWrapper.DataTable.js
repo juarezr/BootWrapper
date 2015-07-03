@@ -98,9 +98,11 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
                 (typeof jsonObject[oCol.mData] != 'undefined') &&
                 (data == jsonObject[oCol.mData]) &&
                 (coli == cellInfo.col) &&
-                (typeof oCol.mLink != 'undefined')) {
+                (typeof oCol.mLink != 'undefined')) {                
+                
                 var link = window.BootWrapper.Strings.formatObject(oCol.mLink, jsonObject);
                 var display = oCol.mDisplay ? window.BootWrapper.Strings.formatObject(oCol.mDisplay, jsonObject) : data;
+
                 return '<a href="' + link + '">' + display + '</a>';
             }
         }
@@ -205,6 +207,34 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
         return 'TH sem data-display-date: ' + data;
     }
 
+    function mRenderTemplate(data, datatype, jsonObject, cellInfo) {
+
+        for (var coli in aoColumns) {
+            // Procura a coluna comparando o valor de 'data' e das propriedades do json
+            var oCol = aoColumns[coli];
+            if ((typeof oCol.mRender != 'undefined') &&
+                (oCol.mRender == mRenderTemplate) &&
+                (typeof jsonObject[oCol.mData] != 'undefined') &&
+                (coli == cellInfo.col) &&
+                (data == jsonObject[oCol.mData]) &&
+                (oCol.mTemplateFunction != 'undefined'))
+            {
+                if (!window.bootwrapper.bwDataTable.MyFunctions[oCol.mTemplateFunction])
+                {
+                    window.bootwrapper.Log('Função para renderizar coluna não encontrada: ' + oCol.mTemplateFunction);
+                    return '';
+                }
+
+                return window.bootwrapper.bwDataTable.MyFunctions[oCol.mTemplateFunction](oCol, data, jsonObject, cellInfo);
+                //return window[oCol.mTemplateFunction](oCol, data, datatype, jsonObject, cellInfo);
+            }
+        }
+        return 'TH sem data-action-function: ' + data;
+    }
+
+    // END Render
+
+
     window.BootWrapper.Log(window.BootWrapper.Strings.format("Finding data with params from %1", formId));
     var form = $('#' + formId).first();
 
@@ -230,8 +260,9 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
         var ths = $('#' + tableId + ' th');
         $.each(ths, function (i, field) {
             var datafield = $(field).attr("data-field");
-			var headerTitle = $(field).attr("data-header") || '';
+            var headerTitle = $(field).attr("data-header") || '';
             var col = { "mData": datafield, "sName": headerTitle };
+
             var displayFormat = $(field).attr("data-display-format");
             if (displayFormat) {
                 col.mDisplay = displayFormat;
@@ -244,17 +275,25 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
 
             var actionFunction = $(field).attr("data-action-function");
             var actionlink = $(field).attr("data-action-link");
+            var actionTemplate = $(field).attr("data-template");
+
             var displayDate = $(field).attr("data-display-date");
             var displayCheckbox = $(field).attr("data-display-checkbox");
             var actionDelete = $(field).attr("data-delete");
             
-            if (actionButton) {
+            if (actionTemplate)
+            {
+                col.mRender = mRenderTemplate;
+                col.mTemplateFunction = actionTemplate;
+            }
+            else if (actionButton) {
                 col.mRender = mRenderActionButtonColumn;
                 col.mLink = actionButton;
                 col.mIcon = actionIcon;
                 col.mColor = actionColor;
                 col.mSize = actionSize;
-            } else if (actionDelete) {
+            }
+            else if (actionDelete) {
                 col.mRender = mRenderActionDeleteColumn;
                 col.mItemColumnName = $(field).attr("item-column-Name");
                 col.mLink = actionDelete;
@@ -262,11 +301,11 @@ BootWrapperDataTable.prototype.FindWithForm = function (formId, tableId, fnCallb
                 col.mColor = actionColor;
                 col.mSize = actionSize;
             }
-            if (actionlink) {
+            else if (actionlink) {                
                 col.mRender = mRenderActionLinkColumn;
-                col.mLink = actionlink;
+                col.mLink = actionlink;                
             }
-            if (actionFunction) {
+            else if (actionFunction) {
                 col.mRender = mRenderActionFunctionColumn;
                 col.mLink = actionFunction;
             }
