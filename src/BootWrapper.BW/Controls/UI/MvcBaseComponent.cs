@@ -1,5 +1,4 @@
 ﻿using BootWrapper.BW.Controls.Util;
-using BootWrapper.BW.Core.Translator;
 using System;
 using System.IO;
 using System.Web;
@@ -110,29 +109,7 @@ namespace BootWrapper.BW.Controls
 
             return String.Format("/{0}/{1}", controllerName, actionName);
         }
-
-        /// <summary>
-        /// Utiliza o tradutor para traduzir um recurso local.
-        /// </summary>
-        /// <param name="resourceKey">Id do recurso.</param>
-        /// <param name="defaultString">Valor padrão caso o recurso não esteja definido.</param>
-        /// <returns>O recurso traduzido ou o valor default.</returns>
-        public string GetLocalString(string resourceKey, string defaultString = "")
-        {
-            return Translator.GetLocalString(GetCurrentRoute(), resourceKey, defaultString);
-        }
-
-        /// <summary>
-        /// Utiliza o tradutor para traduzir um recurso comum.
-        /// </summary>
-        /// <param name="resourceKey">Id do recurso.</param>
-        /// <param name="defaultString">Valor padrão caso o recurso não esteja definido.</param>
-        /// <returns>O recurso traduzido ou o valor default.</returns>
-        protected string GetCommonString(string resourceKey, string defaultString = "")
-        {
-            return Translator.GetCommonString(resourceKey, defaultString);
-        }
-
+        
         /// <summary>
         /// Unifica o valor do atributo class original e se definido também no obetos htmlAttributes.
         /// </summary>

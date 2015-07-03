@@ -133,7 +133,7 @@ namespace BootWrapper.BW.Controls
             var anchor = new TagBuilder("a");            
             anchor.MergeAttribute("href", String.Format("#{0}", target));
             anchor.MergeAttribute("data-toggle", "tab");
-            anchor.InnerHtml = String.Format("<span class='{0}'></span><span class='hidden-inline-mobile'> {1}</span>", icon, GetLocalString(target, title));
+            anchor.InnerHtml = String.Format("<span class='{0}'></span><span class='hidden-inline-mobile'> {1}</span>", icon, title);
 
             var tag = new TagBuilder("li");
             tag.InnerHtml = anchor.ToString();

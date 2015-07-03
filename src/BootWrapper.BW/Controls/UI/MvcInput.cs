@@ -1,5 +1,4 @@
 ﻿using BootWrapper.BW.Controls.Util;
-using BootWrapper.BW.Core.Translator;
 using System;
 using System.IO;
 using System.Web;

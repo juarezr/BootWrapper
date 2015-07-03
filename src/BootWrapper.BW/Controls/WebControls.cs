@@ -9,8 +9,6 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using BootWrapper.BW.Controls.Settings;
-using BootWrapper.BW.Formatter;
-using BootWrapper.BW.Core.Translator;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using BootWrapper.BW.Controls.Util;
@@ -139,12 +137,12 @@ namespace BootWrapper.BW.Controls
 
         public static string BWGetLocalString(this HtmlHelper htmlHelper, string resourceKey, string defaultValue = "")
         {
-            return Translator.GetLocalString(htmlHelper.BWGetCurrentRoute(), resourceKey, defaultValue);
+            return defaultValue;
         }
 
         public static string BWGetCommonString(this HtmlHelper htmlHelper, string resourceKey, string defaultValue = "")
         {
-            return Translator.GetCommonString(resourceKey, defaultValue);
+            return defaultValue;
         }
 
         public static string BWTranslateLocalString(this HtmlHelper htmlHelper, string resourceKey, params object[] args)
@@ -364,7 +362,7 @@ namespace BootWrapper.BW.Controls
             var k = 0;
             for (int i = 0; i < (2 * routeValues.Keys.Count) - 1; i++)
             {
-                if (i.IsEven())
+                if (i % 2 == 0)// is even
                 {
                     builder.Append(String.Format("\"{0}\" : \"{1}\"", routeValues.Keys.ElementAt(k), routeValues.Values.ElementAt(k).ToString()));
                     k++;
@@ -1379,7 +1377,7 @@ namespace BootWrapper.BW.Controls
             snippet.AppendFormat("<div class='input-group date'>");
 
             if (formatPicker == DatePickerFormat.Day)
-                snippet.AppendFormat("<input id='{0}' type='text'class='form-control input-small' data-control='datepicker' name='{1}' data-date-format='{2}' date-min-viewmode='{3}' value='{4}'/>", id, name, format, view_mode, value.FormatDate());
+                snippet.AppendFormat("<input id='{0}' type='text'class='form-control input-small' data-control='datepicker' name='{1}' data-date-format='{2}' date-min-viewmode='{3}' value='{4}'/>", id, name, format, view_mode, value.ToString(@"dd/MM/yyyy"));
             else
                 snippet.AppendFormat("<input id='{0}' type='text'class='form-control input-small' data-control='datepicker' name='{1}' data-date-format='{2}' date-min-viewmode='{3}'/>", id, name, format, view_mode);
 
@@ -1409,7 +1407,7 @@ namespace BootWrapper.BW.Controls
         {
             var snippet = new StringBuilder();
             snippet.AppendFormat("<div class='input-group clockpicker'>");
-            snippet.AppendFormat("<input id='{0}' type='text' class='form-control input-small' data-control='timepicker' name='{1}' value='{2}' readonly/>", id, name, value.FormatTime());
+            snippet.AppendFormat("<input id='{0}' type='text' class='form-control input-small' data-control='timepicker' name='{1}' value='{2}' readonly/>", id, name, value.ToString(@"hh\:mm"));
             snippet.AppendFormat("<span class='input-group-addon'><span class='fa fa-clock-o'></span></span></div>");
 
             return new MvcHtmlString(snippet.ToString());

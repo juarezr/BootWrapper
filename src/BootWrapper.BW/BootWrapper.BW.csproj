@@ -42,14 +42,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\ProjectTester\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="itextsharp.xmlworker">
-      <HintPath>..\..\..\ProjectTester\packages\itextsharp.xmlworker.5.5.6\lib\itextsharp.xmlworker.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -119,43 +111,7 @@
     <Compile Include="Controls\Util\AttributesHelper.cs" />
     <Compile Include="Controls\Util\DropDownListUtil.cs" />
     <Compile Include="Controls\WebControls.cs" />
-    <Compile Include="Core\ApplicationSession.cs" />
-    <Compile Include="Core\BWConfigurationSection.cs" />
-    <Compile Include="Core\LinqExtensions.cs" />
-    <Compile Include="Core\MethodHelpers.cs" />
-    <Compile Include="Exceptions\BWException.cs" />
-    <Compile Include="Interfaces\ILoginContext.cs" />
-    <Compile Include="Interfaces\ILogProvider.cs" />
-    <Compile Include="Menu\CustomRoleProvider.cs" />
-    <Compile Include="Interfaces\ILoginUser.cs" />
-    <Compile Include="Core\ModelController.cs" />
-    <Compile Include="Core\MvcHtmlExtentions.cs" />
-    <Compile Include="Core\MvcRazorHelpers.cs" />
-    <Compile Include="Interfaces\IRoleProvider.cs" />
-    <Compile Include="Menu\MvcSiteMapHelpers.cs" />
-    <Compile Include="Menu\MvcSiteMapProvider.cs" />
-    <Compile Include="Core\Report\BasePDFReport.cs" />
-    <Compile Include="Core\Shared\AppInfo.cs" />
-    <Compile Include="Core\Shared\DateTimeExtensions.cs" />
-    <Compile Include="Core\Translator\Translator.cs" />
-    <Compile Include="Core\ViewResultExtension.cs" />
-    <Compile Include="Formatter\FormatUtil.cs" />
-    <Compile Include="Formatter\MoneyUtil.cs" />
-    <Compile Include="Formatter\NumberUtils.cs" />
-    <Compile Include="Formatter\StringUtils.cs" />
-    <Compile Include="Model\FWModelError.cs" />
-    <Compile Include="Model\FWModelLogin.cs" />
-    <Compile Include="Model\FWBaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Permissions.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\EditViewModel.cs" />
-    <Compile Include="ViewModels\ErrorViewModel.cs" />
-    <Compile Include="ViewModels\GridViewModel.cs" />
-    <Compile Include="ViewModels\FindViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\ReportViewModel.cs" />
-    <Compile Include="ViewModels\SearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

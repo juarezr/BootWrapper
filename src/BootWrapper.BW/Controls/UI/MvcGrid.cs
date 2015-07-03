@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using iTextSharp.tool.xml.html;
 using BootWrapper.BW.Controls.Util;
 using System.Web.Routing;
 
@@ -207,10 +206,10 @@ namespace BootWrapper.BW.Controls
         /// <returns>O próprio objeto</returns>
         public MvcGrid<TModel> Link(string fieldName, string linkURL)
         {
-            var baseAttributes = new 
+            var baseAttributes = new
             {
-                data_action_link= linkURL
-            }            
+                data_action_link = linkURL
+            };
 
             return RenderColumn(fieldName, baseAttributes);
         }

@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace BootWrapper.BW.Core.TShared
+namespace BootWrapper.BW.Formatter
 {
     /// <summary>
     /// Métodos extendidos para Data e Hora.
     /// </summary>
-    public static class DateTimeExtensions
+    public static class DateTimeUtils
     {
         static readonly DateTime _start = Convert.ToDateTime("01/01/2013");
         static readonly DateTime _end = Convert.ToDateTime("31/12/2099");
