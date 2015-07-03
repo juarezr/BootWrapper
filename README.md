@@ -12,7 +12,7 @@ Todos os componentes podem ser utilizados nas views através da nomenclatura.
 
 2 Adicione a dll no seu projeto.
 
-3 Instale através do Nuget os componentes necessários para utilizaçao do BootWrapper. Se preferir, substitua o arquivo package.config do seu projeto pelo arquivo que se encontra na pasta 'nuget'.
+3 Instale através do Nuget os componentes necessários para utilizaçao do BootWrapper. *Se preferir, substitua o arquivo package.config do seu projeto pelo arquivo que se encontra na pasta 'nuget'.*
   * Install-Package bootstrap -version 3.34
   * Install-Package Bootstrap.Datepicker -version 1.4.0
   * Install-Package BootstrapBootstrap-3-Typeahead -version 3.1.1
