@@ -24,7 +24,7 @@ Todos os componentes podem ser utilizados nas views através da nomenclatura.
   * Install-Package Messenger -version 1.4.1
 
 4 Adicione no seu arquivo de lauyout os arquivos de javascript que se encontram na pasta 'js'. Ou crie um bundle:
-```C
+```C#
     var scriptBundle = new ScriptBundle("~/bundles/bootwrapper");
     scriptBundle.Include("~/Scripts/bootwrapper/BootWrapper.Init.js");
     scriptBundle.Include("~/Scripts/bootwrapper/BootWrapper.Helpers.js");
@@ -42,4 +42,26 @@ Todos os componentes podem ser utilizados nas views através da nomenclatura.
           $.bwStartBootWrapper();
       });
 ```
-  
+## Classes de/para  Bootstrap 
+- Algumas Enumerations dentro da biblioteca tem a função de fazer a tradução para as classes do bootstrap.
+  * BootWrapper.BW.Controls.PanelColor
+  * BootWrapper.BW.Controls.ButtonColor
+  * BootWrapper.BW.Controls.ButtonAction
+
+- Classes para geração das tags se encontram em *BootWrapper.BW.Controls.UI*
+- Os métodos estendidos do HtmlHelper são declarados na classe *BootWrapper.BW.Controls.WebControls*
+
+## Exemplos
+- Painel
+
+```
+@using (Html.BWBeginPanel("Título do Painel", PanelColor.Default, new { @class = "col-lg-12" }))
+{
+// body
+}
+-- Variação
+@using (Html.BWBeginPanel("pnl-id", "Título","fa fa-bars" ,PanelColor.Default, new { @class = "col-lg-12" }))
+{
+// body
+}
+```
