@@ -1,10 +1,10 @@
-﻿using BootWrapper.BW.Core;
-using BootWrapper.BW.Interfaces;
+﻿using BootWrapper.Mvc.Core;
+using BootWrapper.Mvc.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BootWrapper.BW.Core
+namespace BootWrapper.Mvc.Core
 {   
     public class Permissions
     {

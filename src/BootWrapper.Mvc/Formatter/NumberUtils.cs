@@ -1,4 +1,4 @@
-﻿namespace BootWrapper.BW.Formatter
+﻿namespace BootWrapper.Mvc.Formatter
 {
     public static class NumberUtils
     {

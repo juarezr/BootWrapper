@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 
 
-namespace BootWrapper.BW.Core
+namespace BootWrapper.Mvc.Core
 {
     public static class LinqExtensions
     {

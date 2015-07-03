@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace BootWrapper.BW.Core.TShared
+namespace BootWrapper.Mvc.Core.TShared
 {
     public static class AppInfo
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BootWrapper.BW.Formatter
+namespace BootWrapper.Mvc.Formatter
 {
     public static class StringUtils
     {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Web;
 using System.Web.Security;
-using BootWrapper.BW.Model;
-using BootWrapper.BW.Menu;
-using BootWrapper.BW.Core;
-using BootWrapper.BW.Interfaces;
+using BootWrapper.Mvc.Model;
+using BootWrapper.Mvc.Menu;
+using BootWrapper.Mvc.Core;
+using BootWrapper.Mvc.Interfaces;
 using System.Net;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     public class LoginViewModel : EditViewModel<BWModelLogin>
     {

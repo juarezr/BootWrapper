@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BootWrapper.BW.Core
+namespace BootWrapper.Mvc.Core
 {
     public static class MethodsHelpers
     {

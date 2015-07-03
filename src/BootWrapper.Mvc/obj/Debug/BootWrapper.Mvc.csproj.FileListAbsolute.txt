@@ -19,3 +19,4 @@ D:\Development\GitHub\BootWrapper\src\BootWrapper.Mvc\bin\Debug\System.Web.WebPa
 D:\Development\GitHub\BootWrapper\src\BootWrapper.Mvc\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Development\GitHub\BootWrapper\src\BootWrapper.Mvc\obj\Debug\BootWrapper.Mvc.exe
 D:\Development\GitHub\BootWrapper\src\BootWrapper.Mvc\obj\Debug\BootWrapper.Mvc.pdb
+D:\Development\GitHub\BootWrapper\src\BootWrapper.Mvc\obj\Debug\BootWrapper.Mvc.csprojResolveAssemblyReference.cache

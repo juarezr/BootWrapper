@@ -3,7 +3,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace BootWrapper.BW.Core.Translator
+namespace BootWrapper.Mvc.Core.Translator
 {
     /// <summary>
     /// Classe para realizar a tradução dos recursos utilizados em uma view.
@@ -19,7 +19,7 @@ namespace BootWrapper.BW.Core.Translator
     /// 2. ResourceKey: Trandução do recurso dentro do grupo.
     /// 
     /// </summary>
-    /// <seealso cref="T:BootWrapper.BW.Controls.WebControls.BWLabel"/>
+    /// <seealso cref="T:BootWrapper.Mvc.Controls.WebControls.BWLabel"/>
     public static class Translator
     {
         private const string COMMON = "CommonTerms";

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
-using BootWrapper.BW.Core.Translator;
-using BootWrapper.BW.Exceptions;
+using BootWrapper.Mvc.Core.Translator;
+using BootWrapper.Mvc.Exceptions;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     public delegate void LogoutEventHandler(object sender, EventArgs e);
 

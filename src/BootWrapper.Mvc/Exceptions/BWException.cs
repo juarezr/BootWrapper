@@ -1,11 +1,11 @@
-﻿using BootWrapper.BW.Core;
-using BootWrapper.BW.Interfaces;
+﻿using BootWrapper.Mvc.Core;
+using BootWrapper.Mvc.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BootWrapper.BW.Exceptions
+namespace BootWrapper.Mvc.Exceptions
 {
     public class BWException
     {

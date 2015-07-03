@@ -1,6 +1,6 @@
-﻿using BootWrapper.BW.Core.Translator;
+﻿using BootWrapper.Mvc.Core.Translator;
 using System.Text;
-using BootWrapper.BW.Formatter;
+using BootWrapper.Mvc.Formatter;
 using System.Collections.Generic;
 
 namespace System.Web.Mvc.Html

@@ -7,10 +7,10 @@ using System.Web.Caching;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Xml.Linq;
-using BootWrapper.BW.ViewModels;
-using BootWrapper.BW.Core;
+using BootWrapper.Mvc.ViewModels;
+using BootWrapper.Mvc.Core;
 
-namespace BootWrapper.BW.Menu
+namespace BootWrapper.Mvc.Menu
 {
     /// <summary>
     /// Provides an XML based sitemap provider for the ASP.NET MVC framework.

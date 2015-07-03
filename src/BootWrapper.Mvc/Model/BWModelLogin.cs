@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BootWrapper.BW.Model
+namespace BootWrapper.Mvc.Model
 {
     public class BWModelLogin : BWBaseModel, IValidatableObject
     {

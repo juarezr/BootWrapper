@@ -1,4 +1,4 @@
-﻿using BootWrapper.BW.Interfaces;
+﻿using BootWrapper.Mvc.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace BootWrapper.BW.Core
+namespace BootWrapper.Mvc.Core
 {
     public class ApplicationSession
     {

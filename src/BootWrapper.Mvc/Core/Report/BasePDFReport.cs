@@ -3,7 +3,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace BootWrapper.BW.Core.Report
+namespace BootWrapper.Mvc.Core.Report
 {
     public abstract class BasePDFReport
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BootWrapper.BW.Formatter
+namespace BootWrapper.Mvc.Formatter
 {
     public static class MoneyUtil
     {

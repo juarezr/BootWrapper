@@ -1,6 +1,6 @@
-using BootWrapper.BW.Core;
-using BootWrapper.BW.Menu;
-using BootWrapper.BW.ViewModels;
+using BootWrapper.Mvc.Core;
+using BootWrapper.Mvc.Menu;
+using BootWrapper.Mvc.ViewModels;
 
 
 namespace System.Web.Mvc

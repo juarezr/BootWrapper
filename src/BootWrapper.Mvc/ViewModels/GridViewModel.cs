@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using BootWrapper.BW.Formatter;
+using BootWrapper.Mvc.Formatter;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     #region DataTableParameters
 

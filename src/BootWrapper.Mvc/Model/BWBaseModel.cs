@@ -1,6 +1,6 @@
 ﻿
 using System;
-namespace BootWrapper.BW.Model
+namespace BootWrapper.Mvc.Model
 {
     public class BWBaseModel
     {

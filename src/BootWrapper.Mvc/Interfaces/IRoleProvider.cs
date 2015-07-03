@@ -1,11 +1,11 @@
-﻿using BootWrapper.BW.Core;
+﻿using BootWrapper.Mvc.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BootWrapper.BW.Interfaces
+namespace BootWrapper.Mvc.Interfaces
 {
     public interface IRoleProvider
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BootWrapper.BW.Formatter
+namespace BootWrapper.Mvc.Formatter
 {
     /// <summary>
     /// Métodos extendidos para Data e Hora.

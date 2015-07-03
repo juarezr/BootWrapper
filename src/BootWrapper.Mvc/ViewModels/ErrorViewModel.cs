@@ -1,8 +1,8 @@
-﻿using BootWrapper.BW.Model;
+﻿using BootWrapper.Mvc.Model;
 using System;
 using System.Web.Mvc;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     public class ErrorViewModel : BaseViewModel
     {

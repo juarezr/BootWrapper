@@ -1,6 +1,6 @@
 using System;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     public class FindViewModel<TEntityType> : BaseViewModel
     {

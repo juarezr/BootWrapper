@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BootWrapper.BW.ViewModels
+namespace BootWrapper.Mvc.ViewModels
 {
     public class ReportViewModel<TEntityType> : BaseViewModel
     {

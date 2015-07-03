@@ -3,10 +3,10 @@ using System.Linq;
 using System.Web.Security;
 
 using System.Collections.Generic;
-using BootWrapper.BW.ViewModels;
-using BootWrapper.BW.Core;
+using BootWrapper.Mvc.ViewModels;
+using BootWrapper.Mvc.Core;
 
-namespace BootWrapper.BW.Menu
+namespace BootWrapper.Mvc.Menu
 {
     /// <summary>
     /// A classe CustomeRoleProvider deve ser declarada no arquivo web.config para utilização de perfis junto com o Sitemap.
@@ -17,7 +17,7 @@ namespace BootWrapper.BW.Menu
     /// <roleManager enabled="true" cacheRolesInCookie="true" defaultProvider="CustomRoleProvider">
     ///     <providers>
     ///         <clear />
-    ///         <add name="CustomRoleProvider" type="BootWrapper.BW.Menu.CustomRoleProvider, BootWrapper.BW" />
+    ///         <add name="CustomRoleProvider" type="BootWrapper.Mvc.Menu.CustomRoleProvider, BootWrapper.BW" />
     ///     </providers>
     ///     </roleManager> 
     /// ]]>

@@ -1,18 +1,18 @@
-﻿using BootWrapper.BW.Interfaces;
-using BootWrapper.BW.Menu;
+﻿using BootWrapper.Mvc.Interfaces;
+using BootWrapper.Mvc.Menu;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
 
-namespace BootWrapper.BW.Core
+namespace BootWrapper.Mvc.Core
 {
     public class BWConfigurationSection : ConfigurationSection
     {
         public static BWConfigurationSection GetConfig()
         {
-            return (BootWrapper.BW.Core.BWConfigurationSection)System.Configuration.ConfigurationManager.GetSection("bwConfigGroup/bwConfig");
+            return (BootWrapper.Mvc.Core.BWConfigurationSection)System.Configuration.ConfigurationManager.GetSection("bwConfigGroup/bwConfig");
         }
 
         [ConfigurationProperty("debugMode", DefaultValue = "false", IsRequired = false)]
